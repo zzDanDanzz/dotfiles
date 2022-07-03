@@ -21,7 +21,9 @@ Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'terryma/vim-multiple-cursors' " Multiple cursors
 Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
 Plug 'https://github.com/jiangmiao/auto-pairs' " for auto pairing brackets
-Plug 'projekt0n/github-nvim-theme'
+Plug 'projekt0n/github-nvim-theme' " hey i like this
+Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
+
 
 call plug#end()
 
@@ -47,4 +49,4 @@ endfunction
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 
-nnoremap <C-s> :CocCommand prettier.forceFormatDocument<CR>
+nnoremap <C-s> :CocCommand prettier.forceFormatDocument<CR>:w<CR>
