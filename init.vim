@@ -1,3 +1,7 @@
+
+" map leader to space
+let mapleader = " " " map leader to Space
+
 :set arabicshape
 :set number	
 :set encoding=utf-8
@@ -21,13 +25,17 @@ Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'terryma/vim-multiple-cursors' " Multiple cursors
 Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
 Plug 'https://github.com/jiangmiao/auto-pairs' " for auto pairing brackets
-Plug 'projekt0n/github-nvim-theme' " hey i like this
+Plug 'projekt0n/github-nvim-theme' " hey i like this theme
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
+Plug 'leafgarland/typescript-vim' " react syntax 
+Plug 'peitalin/vim-jsx-typescript' " react syntax 
+Plug 'pantharshit00/vim-prisma' " prisma 
 
+" fzf
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
-
-colorscheme github_dark_default
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -43,10 +51,30 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
 
 " Remaps for nerdtree
-nnoremap <C-f> :NERDTreeFocus<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <leader>ef :NERDTreeFocus<cr>
+nnoremap <leader>et :NERDTreeToggle<cr>
+
+" show hidden files in nerdtree explorer
+let NERDTreeShowHidden=1
 
 nnoremap <C-s> :CocCommand prettier.forceFormatDocument<CR>:w<CR>
+
+" set theme
+colorscheme github_dark_default
+
+" fzf keybindings
+nnoremap <leader>ff :Files<cr>
+nnoremap <leader>fg :GFiles<cr>
+nnoremap <leader>sf :Rg <cr>
+
+" remaps for split win stuff
+nnoremap <leader>w <C-w>
