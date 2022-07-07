@@ -71,6 +71,10 @@ let NERDTreeShowHidden=1
 
 nnoremap <C-s> :CocCommand prettier.forceFormatDocument<CR>:w<CR>
 
+" to mimic vscode 
+" weird: <C-_> actually means <C-/> to vim
+nmap <C-_> gcc
+
 " set theme
 colorscheme github_dark_default
 
