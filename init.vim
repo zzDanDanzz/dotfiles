@@ -37,6 +37,9 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
+" coc extensions
+let g:coc_global_extensions = ['coc-prettier', 'coc-tsserver', 'coc-rome', 'coc-prisma']
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
